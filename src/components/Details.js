@@ -7,6 +7,7 @@ function Details({image}) {
 const [details, setDetails] = useState({userName:'', userContact:"" , userMsg:''})
 
 const [person , setPerson] =useState([])
+const [value , setValue] =useState()
    
 const handleChange = (e)=>{
   const name = e.target.name
@@ -16,12 +17,15 @@ const handleChange = (e)=>{
   setPerson(details)
 }
 
-  
-const submitForm =(e)=>{
-    e.preventDefault()
-    console.log({...person, 'img':image})
+const handleRateChange = (newValue)=>{
+setValue(newValue)
 }
 
+
+const submitForm =(e)=>{
+    e.preventDefault()
+    console.log({...person, 'Rating':value, 'img':image})
+}
   return (
     <div className='w-full h-screen flex justify-center items-center'>
     <motion.div 
@@ -50,7 +54,7 @@ const submitForm =(e)=>{
          className=' bg-slate-400/10 w-[80%] rounded-sm border-b py-2 outline-none text-sm md:text-base p-2
         border-[#242424] hover:border-[#F7AB0A] text-gray-400 h-28' />
 
-        <Rate defaultValue={0.5} allowHalf allowClear={false}/>
+        <Rate defaultValue={0.5} allowHalf allowClear={false} value={value} onChange={handleRateChange} />
 
         <button className='px-6 py-2 border border-[rgb(36,36,36)] rounded-lg font-semibold bg-[#f7AB0A] text-md tracking-widest
         text-gray-800 transition-all hover:text-[#f7AB0A] hover:bg-transparent hover:border-[#f7AB0A]' >SUBMIT</button>
