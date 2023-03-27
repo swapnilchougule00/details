@@ -9,9 +9,9 @@ function Landing({image,  handleImage}) {
 
       <div className='flex flex-col space-y-5 w-full h-full justify-center items-center'>
 
-      <img src={image} alt="uploded image" className={`text-gray-500 tracking-wider w-[80%] md:w-[50%] h-[40%] md:h-[50%]
-       flex justify-center items-center ${image ? 'block' : 'hidden'}`} />
 
+      <img src={image} alt="uploded" className={`text-gray-500 tracking-wider w-[80%] md:w-[50%] h-[40%] md:h-[50%]
+       flex justify-center items-center ${image ? 'block' : 'hidden'}`} />
         <input type="file" id='file' className={` ${image ? 'block' : 'hidden'}`} onChange={handleImage}/>
 
         <label htmlFor="file" className={`text-gray-500 tracking-wider w-[80%] md:w-[50%] h-[40%] md:h-[50%] text-2xl flex justify-center items-center 
