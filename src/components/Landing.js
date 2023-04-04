@@ -12,7 +12,11 @@ function Landing({image,  handleImage}) {
 
       <img src={image} alt="uploded" className={`text-gray-500 tracking-wider w-[80%] md:w-[50%] h-[40%] md:h-[50%]
        flex justify-center items-center ${image ? 'block' : 'hidden'}`} />
-        <input type="file" id='file' className={` ${image ? 'block' : 'hidden'}`} onChange={handleImage}/>
+
+        <input type="file" id='file' className=' hidden' onChange={handleImage}/>
+
+        <label htmlFor="file" className= {`${image ? 'block' : 'hidden'} text-gray-500 tracking-wider text-xl p-2 border px-5 items-center
+         hover:text-lime-400/50 rounded-lg hover:border-lime-400/30 border-stone-600/20`}  >Change Image</label>
 
         <label htmlFor="file" className={`text-gray-500 tracking-wider w-[80%] md:w-[50%] h-[40%] md:h-[50%] text-2xl flex justify-center items-center 
          border border-dashed hover:text-lime-400  hover:border-lime-400 ${image ? 'hidden' : 'block'} `}
